@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple open-source help desk for developer communities.">
+  <title>CommunityAI — Community Help Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="CommunityAI home"><span class="brand-mark">✦</span> CommunityAI</a>
+    <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">OPEN-SOURCE COMMUNITY TOOLKIT</p>
+      <h1>Good questions.<br><span>Helpful communities.</span></h1>
+      <p class="hero-copy">A simple home for your community's FAQs, learning resources, and unanswered questions.</p>
+      <a class="primary-button" href="#resources">Explore resources <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="search-panel" aria-label="Search resources">
+      <label for="search">What are you looking for?</label>
+      <div class="search-row">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="Try “Git”, “first contribution”, or “HTML”…">
+        <button id="clear-search" class="clear-button" type="button">Clear</button>
+      </div>
+      <p id="result-count" class="muted" aria-live="polite"></p>
+    </section>
+
+    <section id="resources" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COMMUNITY LIBRARY</p><h2>Explore resources</h2></div>
+        <span class="resource-count" id="total-count"></span>
+      </div>
+      <div id="resource-grid" class="resource-grid"></div>
+      <p id="empty-state" class="empty-state" hidden>No matching resources. Try another search.</p>
+    </section>
+
+    <section class="question-section">
+      <div>
+        <p class="eyebrow">CAN'T FIND AN ANSWER?</p>
+        <h2>Ask the community.</h2>
+        <p class="muted">Share what you're stuck on. This demo shows a confirmation locally; it does not send or store your question.</p>
+      </div>
+      <form id="question-form">
+        <label for="question-name">Your name <span>(optional)</span></label>
+        <input id="question-name" name="name" maxlength="60" placeholder="How should we call you?">
+        <label for="question-text">Your question</label>
+        <textarea id="question-text" name="question" rows="4" maxlength="1000" required placeholder="Describe what you're trying to do…"></textarea>
+        <button class="primary-button" type="submit">Submit question <span aria-hidden="true">↗</span></button>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><span>CommunityAI · Built for learning in public.</span><a href="CONTRIBUTING.md">Contribute</a></footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
